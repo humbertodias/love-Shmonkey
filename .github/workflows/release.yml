@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.10
+    runs-on: ubuntu-latest
     env:
       LOVE_FILE_NAME: "shmonkey.love"
     
