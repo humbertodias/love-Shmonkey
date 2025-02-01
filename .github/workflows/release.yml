@@ -17,10 +17,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     
-    - name: Install Love2D
+    # - name: Install Love2D latest
+    #   run: |
+    #     sudo apt update -y
+    #     sudo apt install -y love zip
+
+    - name: Install Love2D 0.10.1
       run: |
         sudo apt update -y
-        sudo apt install -y love zip
+        sudo apt install -y zip
+        curl -L https://github.com/love2d/love/releases/download/0.10.1/love_0.10.1ppa1_amd64.deb -o love.deb
+        sudo dpkg -i love.deb
+        sudo apt install -f -y
     
     - name: Package Love2D project
       run: |
